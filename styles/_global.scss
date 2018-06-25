@@ -1,6 +1,9 @@
 body {
   @media(max-width: 600px) {
-    padding-top: 20px;
+    // padding-top: 20px;
+    display: flex;
+    align-items: center;
+    height: 100vh;
   }
 }
 
@@ -22,7 +25,7 @@ body {
     padding: 2%;
   }
   svg {
-  // border: 1px solid #000;
+
   width: 100%;
   display: block;
 
@@ -82,19 +85,30 @@ body {
   background: white;
   position: absolute;
   left: 50%;
+  transition: background 0.3s;
+  &:hover {
+    background: #d3d3d3;
+  }
 }
 
 .prevElection {
+  bottom: 0;
+  transform: translate(-50%, 150%);
+}
+.nextElection {
   top: 0;
   transform: translate(-50%, -150%);
 }
-.nextElection {
-  bottom: 0;
-  transform: translate(-50%, 150%);
+
+@media (max-width: 500px) {
+  .prevElection, .nextElection {
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.514);
+  }
 }
 
 //For larger screen sizes
 @media (min-width: 600px) {
+
   .prevElection, .nextElection {
     top: 50%;
     bottom: auto;
