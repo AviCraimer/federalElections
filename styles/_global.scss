@@ -1,0 +1,117 @@
+body {
+  @media(max-width: 500px) {
+    padding-top: 20px;
+  }
+}
+
+.chart {
+  position: relative;
+  width: 80%;
+  max-width: 695px;
+  padding: 5%;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.514);
+  margin: 50px auto;
+  @media (min-width: 800px) {
+    padding: 2%;
+    margin: 20px auto;
+  }
+
+  @media (max-width: 500px) {
+    width: 100%;
+    box-shadow: none;
+    padding: 2%;
+  }
+  svg {
+  // border: 1px solid #000;
+  width: 100%;
+  display: block;
+
+    circle {
+      position: relative;
+      stroke-width: 4px;
+      stroke-dasharray: 3;
+      @media (max-width: 800px) {
+        stroke-dasharray: 5;
+      }
+      @media (max-width: 500px) {
+        stroke-dasharray: 8;
+      }
+    }
+    .baseline {
+      height: 5px;
+      width: 1000px;
+      fill: black;
+
+    }
+    .topLabel, .yearLabel {
+      font: bold 40px  sans-serif;
+
+    }
+
+    .partyLabels {
+      font: bold 30px  sans-serif;
+      @media (max-width: 800px) {
+        font: bold 45px  sans-serif;
+      }
+      @media (max-width: 500px) {
+        font: bold 55px  sans-serif;
+      }
+    }
+    .bottomLabel  {
+      text {
+        font: bold 20px  sans-serif;
+      }
+      @media (max-width: 650px) {
+        text {
+          transform: translateY(3%);
+          font: bold 40px sans-serif;
+        }
+        text:nth-child(2) {
+          transform: translateY(6%);
+        }
+
+      }
+    }
+
+  }
+}
+
+.prevElection, .nextElection {
+  border: 2px solid black;
+  padding: 7px;
+  background: white;
+  position: absolute;
+  left: 50%;
+}
+
+.prevElection {
+  top: 0;
+  transform: translate(-50%, -150%);
+}
+.nextElection {
+  bottom: 0;
+  transform: translate(-50%, 150%);
+}
+
+//For larger screen sizes
+@media (min-width: 600px) {
+  .prevElection, .nextElection {
+    top: 50%;
+    bottom: auto;
+    left: auto;
+  }
+
+  .prevElection {
+    left: 0;
+    transform: translate(-50%, -50%);
+  }
+  .nextElection {
+    right: 0;
+    transform: translate(50%, -50%);
+  }
+}
+
+.hide {
+  display: none;
+}
+
